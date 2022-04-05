@@ -1,0 +1,105 @@
+*{
+    /* 初始化，取消页面元素的内外边距 */
+    margin: 0;
+    padding: 0;
+    /* 规定两个并排的带边框的框 */
+    box-sizing: border-box;
+}
+body{
+    /* 100%窗口高度 */
+    height: 100vh;
+    /* 弹性布局 */
+    display: flex;
+    /* 水平垂直居中 */
+    justify-content: center;
+    align-items: center;
+    /* 渐变背景 */
+    background: linear-gradient(200deg,#eef1f5,#e6e9fe);
+}
+.nav{
+    /* 弹性布局 */
+    display: flex;
+    /* 背景颜色 */
+    background-color: #b7a1eb;
+    /* 高度 */
+    height: 100px;
+    /* 向 div 元素添加圆角边框 */
+    border-radius: 20px;
+    /* 溢出隐藏 */
+    overflow: hidden;
+    /* 阴影 */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+.nav .menu{
+    /* 设置列表项标记的类型为空 */
+    list-style: none;
+    /* 弹性布局 */
+    display: flex;
+    /* 水平居中 */
+    justify-content: center;
+}
+.nav .menu .item{
+    /* 相对定位 */
+    position: relative;
+    /* 设置鼠标样式为手 */
+    cursor: pointer;
+    /* 设置内边距 */
+    padding: 0 10px;
+    width: 150px;
+    height: 100%;
+    /* 延迟 */
+    transition: all 0.4s ease;
+}
+.nav .menu .item:hover{
+    background-color: #a38bdb;
+}
+.nav .menu .item .link{
+    /* block将此元素设置为块级元素 */
+    display: block;
+    /* 相对定位 */
+    position: relative;
+    width: 100%;
+    height: 100px;
+    color: #fff;
+    /* 取消a标签下划线 */
+    text-decoration: none;
+    /* 溢出隐藏 */
+    overflow: hidden;
+    /* 延迟 */
+    transition: all 0.4s ease;
+}
+.nav .menu .item .link .fa{
+    /* 绝对定位 */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    /* 平移 */
+    transform: translateY(-50%);
+    width: 100%;
+    /* 规定元素中的文本的水平对齐 */
+    text-align: center;
+    /* 延迟 */
+    transition: all 0.4s ease;
+}
+.nav .menu .item .link span{
+    /* 绝对定位 */
+    position: absolute;
+    width: 100%;
+    bottom: -50%;
+    left: 0;
+    /* 规定元素中的文本的水平对齐 */
+    text-align: center;
+    /* 隐藏元素 */
+    opacity: 0;
+    /* 延迟 */
+    transition: all 0.4s ease;
+}
+.nav .menu .item:hover .link span{
+    /* 图标上移，显示隐藏 */
+    bottom: 18px;
+    opacity: 1;
+}
+.nav .menu .item:hover .link .fa{
+    /* 图标上移 */
+    transform: translateY(-95%);
+}
